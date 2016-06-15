@@ -38,7 +38,7 @@ $(function() {
             } else {
                 $('app-header').removeClass('black');
             };
-            if(scrollTop >= portraitTop - 200) {
+            if(scrollTop >= portraitTop - 150) {
                 $('.scrollable').addClass('animated');
             } else {
                 $('.scrollable').removeClass('animated');
