@@ -12,26 +12,63 @@
             background-color: #222222;
         }
         aside{
-            width: 30%;
+            width: 20%;
             margin: 0 0 0 10%;
             float: left;
             text-align: center;
             padding-top: 30px;
+            position: relative;
+
         }
-        aside p {
-            color: white;
-            font-size: 12px;
-            font-weight: lighter;
-            line-height: 1.8;
-            margin-top: 20px;
+        aside:after {
+            position:absolute;
+            content:'';
+            border-bottom:1px solid rgb(189, 168, 130);
+            width:25px;
+            height:0;
+            display:block;
+            bottom:30px;
+            left:-15px;
         }
+        aside:before {
+            position: absolute;
+            content: '';
+            border-left: 1px solid rgb(189, 168, 130);
+            width: 0px;
+            height: 25px;
+            display: block;
+            left: 30px;
+            bottom: -15px;
+            z-index: 2;
+        }
+
         figure {
             margin:0;
+            position:relative;
+        }
+        figure:after {
+            position:absolute;
+            content:'';
+            border-bottom:1px solid rgb(189, 168, 130);
+            width:25px;
+            height:0;
+            display:block;
+            top:30px;
+            left:-15px;
+        }
+        figure:before {
+            position:absolute;
+            content:'';
+            border-left:1px solid rgb(189, 168, 130);
+            width:0px;
+            height:25px;
+            display:block;
+            top:-15px;
+            left:30px;
+            z-index:2;
         }
         figure img {
-            border-radius: 50%;
-            max-width: 60%;
-            border: 10px solid rgba(0, 0, 0, 0.20);
+            width: 810px;
         }
         section {
             width:40%;
@@ -39,22 +76,31 @@
             float:left;
             color:white;
             text-align:left;
+            position: relative;
+
         }
         section h2 {
-            font-size:3em;
+            margin-top:0;
         }
         section p {
             line-height: 1.8;
             margin-left: 40px;
             margin-bottom:40px;
         }
-        .social-container {
-            margin-top:20px;
-        }
         social-link {
             display:inline-block;
             margin: 10px;
             vertical-align:middle;
+        }
+        .scrollable {
+            opacity:0;
+            transform : translateX(-20px);
+            transition: all ease-out 0.2s;
+        }
+        .scrollable.animated {
+            opacity:1;
+            transform:translateX(0px);
+            position:relative;
         }
         .btn {
             margin-left:40px;
@@ -71,7 +117,7 @@
         }
         tool {
             display:inline-block;
-            width:64px;
+            width:44px;
             margin:10px;
             vertical-align: middle;
         }
@@ -81,17 +127,12 @@
     </style>
 
     <aside>
-
         <figure>
-            <img src="/src/assets/img/me.jpg" alt="">
+            <img src="/src/assets/img/me2.jpg" alt="" class="scrollable">
         </figure>
+    </aside>
 
-        <p>Thibault Saint Germain <br>
-            29 ans <br>
-            né à PAU (64)<br>
-            Capricorne<br>
-            Paris XIe | Bordeaux</p>
-
+    <section>
         <div class="social-container">
             <template is="dom-repeat" items="{{socials}}">
 
@@ -100,15 +141,10 @@
                 </social-link>
             </template>
         </div>
-
-
-    </aside>
-
-    <section>
         <h2>Je suis Thibault Saint Germain, designer / developpeur frontend.</h2>
 
         <p>
-            Ayant un profil de chef de projet / directeur artistique, j'ai depuis 4 ans axé mon travail sur le développement frontend.
+            Ayant un profil de chef de projet / directeur artistique, j'ai depuis 4 ans orienté mon travail sur le développement frontend.
             Terminant actuellement un master 2 d'Expert en Stratégie Digitale (IESA Multimédia), je suis également Freelance en conception UI / UX et développement.<br><br>Vous avez un projet ? N'hésitez pas à me contacter !
         </p>
         <a href="mailto:hello@tsg1986.com" class="btn">envoyez-moi un mail</a>

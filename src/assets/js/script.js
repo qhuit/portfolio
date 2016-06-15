@@ -32,12 +32,18 @@ $(function() {
                 inst.update(scrollTop);
             });
             var devTop = $('development-demos').offset().top;
-            console.log(devTop);
+            var portraitTop = $('#myself').offset().top;
             if(scrollTop >= devTop-80){
                 $('app-header').addClass('black');
             } else {
                 $('app-header').removeClass('black');
+            };
+            if(scrollTop >= portraitTop - 200) {
+                $('.scrollable').addClass('animated');
+            } else {
+                $('.scrollable').removeClass('animated');
             }
+
         }
     }
 
@@ -49,7 +55,6 @@ $(function() {
     moveItItem.prototype.update = function(scrollTop){
         var pos = scrollTop / this.speed;
         this.el.css('transform', 'translateY(' + -pos + 'px)');
-        //this.el.css('opacity', ''+ -1/pos*20+ '');
     };
     $('[data-scroll-speed]').moveIt();
 
