@@ -1,0 +1,77 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="poster-list">
+
+<template>
+    <style>
+        :host {
+            overflow: auto;
+            display: block;
+            padding:100px;
+            text-align:center;
+            background-color: whitesmoke;
+        }
+        poster {
+            border: 10px solid black;
+            box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2), 0 10px 10px 0px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0,0,0,0.3) inset;
+            display: inline-block;
+            position:relative;
+            margin:40px;
+        }
+
+        poster:before {
+            content: '';
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            transform: rotateZ(45deg);
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: -25px auto 0;
+            border-radius: 3px;
+            position: absolute;
+            left: 50%;
+            margin-left: -20px;
+        }
+        poster:after {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            margin-top: -34px;
+            left: 50%;
+            margin-left: -3px;
+            top: 0;
+        }
+        poster img {
+            margin-bottom: -5px;
+        }
+    </style>
+        <template is="dom-repeat" items="{{posters}}">
+            <poster>
+            <img class="poster-img" src="{{item.url}}" alt="{{item.alt}}" width="{{item.width}}">
+            </poster>
+        </template>
+
+</template>
+
+    <script>
+        Polymer({
+            is: 'poster-list',
+            ready: function() {
+                this.posters = [
+                    {url: './src/assets/img/print/Mathilde.jpg', alt : 'communion de Mathilde Chauvel', width : '290'},
+                    {url: './src/assets/img/print/mummy.jpg', alt : 'communion de Mathilde Chauvel', width : '300'},
+                    {url: './src/assets/img/print/AutoPortrait.jpg', alt : 'autoportrait', width : '280'},
+                    {url: './src/assets/img/print/poster.jpg', alt : 'Concert Stabat Mater de Dvorak', width : '280'},
+                    {url: './src/assets/img/print/concours.jpg', alt : 'Concours Agora 2015', width : '310'},
+                    {url: './src/assets/img/print/empire.jpg', alt : 'Poster Empire of Sound', width : '270'}
+                ];
+            }
+        });
+    </script>
+
+</dom-module>

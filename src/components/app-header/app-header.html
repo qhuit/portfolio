@@ -1,0 +1,80 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="app-header">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px 50px;
+        position:fixed;
+        width: calc( 100% - 100px);
+        top: 0;
+        left: 0;
+        z-index:10;
+        font-family:sans-serif;
+        transition:all ease-in 0.2s;
+      }
+      :host.black {
+        background-color:rgba(51, 51, 51, 0.9);
+      }
+      img {
+        width:80px;
+        float:left;
+      }
+
+      nav {
+        width:calc( 100% - 100px );
+        text-align:right;
+        float:left;
+      }
+
+      nav li {
+        display:inline-block;
+        list-style:none;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-left: 20px;
+        transition:all ease-out 0.2s;
+      }
+      nav a:hover {
+        color:rgb(189, 168, 130);
+        text-decoration:line-through;
+      }
+    </style>
+
+
+      <img src="/src/assets/img/logos/logo.svg">
+      <nav>
+        <ul>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#dev">Développement</a></li>
+          <li><a href="#logos">Logos</a></li>
+          <li><a href="#print">Print</a></li>
+          <li><a href="#myself">À propos</a></li>
+        </ul>
+      </nav>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'app-header',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'app-header',
+        },
+      },
+
+    });
+
+  </script>
+</dom-module>

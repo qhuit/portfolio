@@ -1,0 +1,96 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="heroe-content">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height:calc( 100vh - 170px );
+        font-family:sans-serif;
+        padding-top: 170px;
+        text-align: center;
+        background: -webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/src/assets/img/bkg.jpg');
+        background-position:center;
+        background-size:cover;
+        background-attachment: fixed;
+        color:white;
+      }
+
+      .home-message {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      .home-message + span a {
+        position:absolute;
+        bottom:30px;
+        width:100%;
+        text-align:center;
+        left:0;
+        color:white;
+        text-decoration:none;
+        transition:all ease-out 0.2s;
+        opacity:0.3;
+      }
+
+      .home-message + span a:hover {
+        opacity:1;
+        transform: translateY(-5px);
+      }
+
+      .home-message + span > a:after {
+        display:block;
+        content:url('/src/assets/img/arrow.svg');
+        width: 50px;
+        height: 50px;
+        margin: 10px auto;
+      }
+
+      .home-message h1 {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: normal;
+        letter-spacing: 0.2em;
+      }
+
+      .home-message h1 span {
+        margin-bottom: 20px;
+        display: block;
+        font-size: 10px;
+      }
+
+      .home-message p {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+      }
+
+    </style>
+  <section id="heroe-content" >
+    <div class="home-message" data-scroll-speed="-3">
+      <h1>
+        <span>Bonjour, je suis</span>
+        <img src="/src/assets/img/logos/logo.svg">
+      </h1>
+      <p>Digital creative in Paris</p>
+    </div>
+
+    <span><a href="#dev">Découvrez mon travail</a></span>
+  </section>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'heroe-content',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'heroe-content'
+        }
+      }
+
+    });
+  </script>
+</dom-module>

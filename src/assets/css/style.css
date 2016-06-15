@@ -1,0 +1,16 @@
+.btn {
+    text-decoration: none;
+    color: rgb(189, 168, 130);
+    padding: 13px 18px;
+    text-transform: uppercase;
+    border: 2px solid rgb(189, 168, 130);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    transition: all ease-in 0.2s;
+}
+
+.btn:hover {
+    background-color:rgb(189, 168, 130) ;
+}
+

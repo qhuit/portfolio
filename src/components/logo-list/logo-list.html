@@ -1,0 +1,51 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="logo-list">
+
+<template>
+    <style>
+        :host {
+            overflow: auto;
+            display: block;
+        }
+        .logo-single {
+            width:25%;
+            float:left;
+            background-color:whitesmoke;
+            height:50vh;
+            text-align:center;
+            line-height:250px;
+        }
+
+        .logo-single img {
+            width:50%;
+            height: 100%;
+        }
+    </style>
+        <template is="dom-repeat" items="{{logos}}">
+            <logo class="logo-single" style="background-color:{{item.color}}">
+            <img class="logo-img" src="{{item.url}}" alt="">
+            </logo>
+        </template>
+
+</template>
+
+    <script>
+        Polymer({
+            is: 'logo-list',
+            ready: function() {
+                this.logos = [
+                    {url: './src/assets/img/logos/logo1.svg', color: '#302E3F'},
+                    {url: './src/assets/img/logos/logo2.svg', color: '#FFFFFF'},
+                    {url: './src/assets/img/logos/logo.svg', color: '#C1272D'},
+                    {url: './src/assets/img/logos/logo3.svg', color: '#BDA882'},
+                    {url: './src/assets/img/logos/logo4.svg', color: '#FFFFFF'},
+                    {url: './src/assets/img/logos/logo5.svg', color: '#34383A'},
+                    {url: './src/assets/img/logos/logo6.svg', color: '#1F1665'},
+                    {url: './src/assets/img/logos/logo7.svg', color: '#FFFFFF'}
+                ];
+            }
+        });
+    </script>
+
+</dom-module>

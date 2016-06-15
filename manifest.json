@@ -1,0 +1,7 @@
+{
+  "name": "portfolio",
+  "short_name": "portfolio",
+  "description": "Portfolio 2016 built with polymer",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,169 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="about-me">
+
+<template>
+    <style>
+        :host {
+            overflow: auto;
+            display: block;
+            padding:100px 0;
+            text-align:center;
+            background-color: #222222;
+        }
+        aside{
+            width: 30%;
+            margin: 0 0 0 10%;
+            float: left;
+            text-align: center;
+            padding-top: 30px;
+        }
+        aside p {
+            color: white;
+            font-size: 12px;
+            font-weight: lighter;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+        figure {
+            margin:0;
+        }
+        figure img {
+            border-radius: 50%;
+            max-width: 60%;
+            border: 10px solid rgba(0, 0, 0, 0.20);
+        }
+        section {
+            width:40%;
+            margin: 0 10%;
+            float:left;
+            color:white;
+            text-align:left;
+        }
+        section h2 {
+            font-size:3em;
+        }
+        section p {
+            line-height: 1.8;
+            margin-left: 40px;
+            margin-bottom:40px;
+        }
+        .social-container {
+            margin-top:20px;
+        }
+        social-link {
+            display:inline-block;
+            margin: 10px;
+            vertical-align:middle;
+        }
+        .btn {
+            margin-left:40px;
+        }
+        .btn:hover {
+            color: #222222;
+        }
+        .toolbox {
+            margin-top:70px;
+        }
+        .toolbox h3 {
+        text-transform:uppercase;
+            letter-spacing: 0.1em;
+        }
+        tool {
+            display:inline-block;
+            width:64px;
+            margin:10px;
+            vertical-align: middle;
+        }
+        tool img {
+            width:100%;
+        }
+    </style>
+
+    <aside>
+
+        <figure>
+            <img src="/src/assets/img/me.jpg" alt="">
+        </figure>
+
+        <p>Thibault Saint Germain <br>
+            29 ans <br>
+            né à PAU (64)<br>
+            Capricorne<br>
+            Paris XIe | Bordeaux</p>
+
+        <div class="social-container">
+            <template is="dom-repeat" items="{{socials}}">
+
+                <social-link>
+                    <a href="{{item.url}}" target="_blank"><img class="poster-img" src="{{item.icon}}" ></a>
+                </social-link>
+            </template>
+        </div>
+
+
+    </aside>
+
+    <section>
+        <h2>Je suis Thibault Saint Germain, designer / developpeur frontend.</h2>
+
+        <p>
+            Ayant un profil de chef de projet / directeur artistique, j'ai depuis 4 ans axé mon travail sur le développement frontend.
+            Terminant actuellement un master 2 d'Expert en Stratégie Digitale (IESA Multimédia), je suis également Freelance en conception UI / UX et développement.<br><br>Vous avez un projet ? N'hésitez pas à me contacter !
+        </p>
+        <a href="mailto:hello@tsg1986.com" class="btn">envoyez-moi un mail</a>
+        <a href="tel:0651388655" class="btn">appelez-moi</a>
+
+        <div class="toolbox">
+            <h3>Technos</h3>
+            <template is="dom-repeat" items="{{technos}}">
+                <tool><img class="tool" src="{{item.tool}}" /></tool>
+            </template>
+        </div>
+
+        <div class="toolbox">
+            <h3>Outils</h3>
+            <template is="dom-repeat" items="{{tools}}">
+                <tool><img class="tool" src="{{item.tool}}" /></tool>
+            </template>
+        </div>
+
+    </section>
+
+
+
+</template>
+
+    <script>
+        Polymer({
+            is: 'about-me',
+            ready: function() {
+                this.socials = [
+                    {url: 'https://github.com/qhuit', icon : '/src/assets/img/icons/github.svg'},
+                    {url: 'https://www.behance.net/Digital-Content/', icon : '/src/assets/img/icons/behance.svg'},
+                    {url: 'https://www.linkedin.com/in/thibaultsaintgermain?trk=hp-identity-name', icon : '/src/assets/img/icons/linkedin.svg'},
+                    {url: 'https://twitter.com/tsg1986?lang=fr', icon : '/src/assets/img/icons/twitter.svg'}
+                ];
+                this.tools = [
+                    {tool : '/src/assets/img/icons/phpstorm.png', alt:'PhpStorm'},
+                    {tool : '/src/assets/img/icons/webstorm.png', alt:'Webstorm'},
+                    {tool : '/src/assets/img/icons/github.png', alt:'Github'},
+                    {tool : '/src/assets/img/icons/photoshop.png', alt:'Photoshop'},
+                    {tool : '/src/assets/img/icons/illustrator.png', alt:'Illustrator'},
+                    {tool : '/src/assets/img/icons/indesign.png', alt:'Indesign'},
+                    {tool : '/src/assets/img/icons/balsamiq.png', alt:'Baslamiq Mockup'}
+                ];
+                this.technos = [
+                    {tool : '/src/assets/img/icons/html.png', alt:'html 5'},
+                    {tool : '/src/assets/img/icons/css.png', alt:'css 3'},
+                    {tool : '/src/assets/img/icons/js.png', alt:'Javascript'},
+                    {tool : '/src/assets/img/icons/sass.svg', alt:'Sass'},
+                    {tool : '/src/assets/img/icons/wordpress.png', alt:'wordpress'},
+                    {tool : '/src/assets/img/icons/php.png', alt:'php'},
+                    {tool : '/src/assets/img/icons/symfony.png', alt:'symfony'}
+                ];
+            }
+        });
+    </script>
+
+</dom-module>

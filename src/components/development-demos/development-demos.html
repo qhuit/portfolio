@@ -1,0 +1,126 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="development-demos">
+  <template>
+      <style>
+        :host {
+          display: block;
+          min-height:100vh;
+          font-family:sans-serif;
+          text-align: center;
+          background-position:center;
+          background-size:cover;
+          background-attachment: fixed;
+          color:white;
+        }
+
+        figure {
+          width:40%;
+          padding: 0 5%;
+          float: left;
+          margin:0;
+        }
+        section {
+          text-align:left;
+          color:#333;
+          width:30%;
+          padding-left:20%;
+          margin:0;
+          float:left;
+        }
+        h2 {
+          font-size:3em;
+        }
+        h2 span {
+          font-size: 12px;
+          display: block;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          color: rgb(189, 168, 130);
+          font-weight: normal;
+        }
+        p{
+          margin:0 0 60px 30px;
+        }
+        website-single {
+          padding: 100px 0;
+          overflow: auto;
+          display: block;
+        }
+
+        website-single:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 10px;
+          border-top: 50px solid whitesmoke;
+          border-left: 100vw solid transparent;
+          transform: translateY(-100px);
+        }
+        website-single:first-child:before {
+          display:none;
+        }
+        figure img {
+          max-width: 100%;
+          max-height: 500px;
+        }
+
+        website-single:nth-child(odd) {
+          background-color:whitesmoke;
+        }
+        website-single:nth-child(odd):before {
+          border-top: 50px solid white;
+        }
+        website-single:nth-child(odd) section{
+          float: right;
+          padding-left: 0;
+          padding-right: 20%;
+        }
+        website-single .btn:hover {
+          color: white;
+        }
+        website-single:nth-child(odd) .btn:hover {
+          color: whitesmoke;
+        }
+      </style>
+
+    <template is="dom-repeat" items="{{websites}}">
+
+      <website-single>
+
+        <section class="description">
+          <h2>
+            <span>{{item.date}}</span>
+            {{item.name}}
+          </h2>
+          <p>{{item.description}}</p>
+          <a href="{{item.link}}" target="_blank" class="btn">voir le site</a>
+        </section>
+        <figure>
+          <a href="{{item.link}}" target="_blank" >
+            <img class="logo-img" src="{{item.image_url}}" alt="{{item.alt}}">
+          </a>
+        </figure>
+
+      </website-single>
+    </template>
+
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'development-demos',
+      ready: function() {
+        this.websites = [
+          {date: 'Février 16', name: 'Restaurant Le Tournesol', description: 'Site développé avec le CMS Wordpress pour un restaurant de Courbevoie.', link : 'http://www.restaurant-letournesol.fr/', image_url : './src/assets/img/websites/website.png', alt : "site internet du restaurant Le Tournesol à Courbevoie"},
+          {date: 'En cours | preprod', name: 'Alejandra Poupel Events', description: 'Site développé avec le CMS Wordpress pour une agence évènementiel haut de gamme à Paris.', link : 'http://alejandra.tsg1986.com/', image_url : './src/assets/img/websites/website2.png', alt : "site internet de Alejandra Poupel, Event planner à Paris"},
+          {date: 'En cours | preprod', name: 'Unveil', description: 'Side Project : Application qui vous permet de faire lever le voile sur vos secrets par vos amis. Développé en node.js.', link : 'http://192.168.1.68:3001', image_url : './src/assets/img/websites/unveil.png', alt : "Unveal | Faites lever le voile sur vos secrets"},
+          {date: 'Septembre 14', name: 'Jean Edouard Cistacq', description: 'Site développé avec le CMS Wordpress pour un designer objet : Jean Edouard Cistacq.', link : 'http://jean-edouardcistacq.com/', image_url : './src/assets/img/websites/jecistacq.png', alt : "site internet du designer Jean Edouard Cistacq"},
+          {date: 'mars 2015', name: 'Concours Séances Privées Touscoprod', description: 'Page de jeu concours désignée et intégré sous Symfony pour la plateforme de crowdfunding Touscoprod.com.', link : 'http://www.touscoprod.com/fr/concours-seances-privees', image_url : './src/assets/img/websites/tcp.png', alt : "Page concours pour la plateforme de crowdfunding touscoprod.com"}
+
+        ];
+      }
+    });
+  </script>
+</dom-module>

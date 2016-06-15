@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="src/assets/css/normalize.css">
+    <link rel="stylesheet" href="src/assets/css/style.css">
+
+    <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="/src/components/app-header/app-header.html">
+    <link rel="import" href="/src/components/heroe-content/heroe-content.html">
+    <link rel="import" href="/src/components/development-demos/development-demos.html">
+    <link rel="import" href="/src/components/logo-list/logo-list.html">
+    <link rel="import" href="/src/components/poster-list/poster-list.html">
+    <link rel="import" href="/src/components/about-me/about-me.html">
+
+  </head>
+  <body>
+    <app-header></app-header>
+    <heroe-content id="home"></heroe-content>
+    <development-demos id="dev"></development-demos>
+    <logo-list id="logos"></logo-list>
+    <poster-list id="print"></poster-list>
+    <about-me id="myself"></about-me>
+    <script src="/src/assets/js/script.js"></script>
+  </body>
+</html>
